@@ -74,4 +74,4 @@ Alpha One follows the **Glass-morphism** design trend, utilizing:
 - High-contrast, bold typography for clarity and impact.
 
 ---
-Built with ❤️ by Alpha One Team.
+Built with ❤️ by Alpha One Team (Prasad Patharvat).
