@@ -56,8 +56,8 @@ const TaskManagement = () => {
         <div className="animate-fade-in">
             <div className="flex justify-between items-center mb-10">
                 <div>
-                    <h2 className="text-3xl font-black text-white tracking-tight">Mission <span className="text-primary-500">Control</span></h2>
-                    <p className="text-slate-500 mt-1">Distribute objectives and monitor deployment status.</p>
+                    <h2 className="text-3xl font-black text-main tracking-tight">Mission <span className="text-primary-500">Control</span></h2>
+                    <p className="text-muted mt-1">Distribute objectives and monitor deployment status.</p>
                 </div>
                 <button 
                     onClick={() => setShowModal(true)} 
@@ -81,8 +81,8 @@ const TaskManagement = () => {
                                 </button>
                             </div>
                             
-                            <h3 className="text-lg font-black text-white mb-2 leading-tight group-hover:text-primary-400 transition-colors">{task.title}</h3>
-                            <p className="text-slate-500 text-sm font-medium line-clamp-3 leading-relaxed mb-6">{task.description}</p>
+                            <h3 className="text-lg font-black text-main mb-2 leading-tight group-hover:text-primary-400 transition-colors">{task.title}</h3>
+                            <p className="text-muted text-sm font-medium line-clamp-3 leading-relaxed mb-6">{task.description}</p>
                             
                             <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-950/40 border border-white/5 border-dashed">
                                 <div className="flex items-center gap-3">
@@ -90,15 +90,15 @@ const TaskManagement = () => {
                                         {task.assignedTo?.name?.[0]}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-xs font-bold text-slate-300 capitalize">{task.assignedTo?.name}</span>
-                                        <span className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">Assignee</span>
+                                        <span className="text-xs font-bold text-main capitalize">{task.assignedTo?.name}</span>
+                                        <span className="text-[10px] text-muted font-bold uppercase tracking-widest">Assignee</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="p-4 bg-white/[0.02] border-t border-white/5 flex items-center justify-between">
-                            <div className="flex items-center gap-2 text-slate-500 px-3 py-1 bg-slate-950/50 rounded-lg border border-white/5">
+                            <div className="flex items-center gap-2 text-muted px-3 py-1 bg-slate-950/50 rounded-lg border border-white/5">
                                 <Calendar size={14} className="text-primary-500" />
                                 <span className="text-[10px] font-bold uppercase tracking-wider">{new Date(task.dueDate).toLocaleDateString()}</span>
                             </div>

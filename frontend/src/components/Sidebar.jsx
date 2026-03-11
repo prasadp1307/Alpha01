@@ -32,7 +32,7 @@ const Sidebar = () => {
                                 to={link.path}
                                 className={({ isActive }) =>
                                     `flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 group ${
-                                        isActive ? 'nav-link-active' : 'text-slate-400 hover:bg-white/5 hover:text-slate-100'
+                                        isActive ? 'nav-link-active' : 'text-muted hover:bg-white/5 dark:hover:bg-white/5 light:hover:bg-black/5 hover:text-main'
                                     }`
                                 }
                             >
@@ -47,12 +47,6 @@ const Sidebar = () => {
                 </ul>
             </div>
             
-            <div className="mt-auto p-4 mb-4">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-primary-600/20 to-transparent border border-primary-500/10">
-                    <p className="text-xs font-bold text-primary-400 mb-1">Alpha One Pro</p>
-                    <p className="text-[10px] text-slate-500">Unified Management System v2.0</p>
-                </div>
-            </div>
         </aside>
     );
 };

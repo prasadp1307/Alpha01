@@ -53,8 +53,8 @@ const MyLeaves = () => {
         <div className="animate-fade-in">
             <header className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h2 className="text-3xl font-black text-white tracking-tight">Absence <span className="text-primary-500">Center</span></h2>
-                    <p className="text-slate-500 mt-1">Manage your leave applications and request status history.</p>
+                    <h2 className="text-3xl font-black text-main tracking-tight">Absence <span className="text-primary-500">Center</span></h2>
+                    <p className="text-muted mt-1">Manage your leave applications and request status history.</p>
                 </div>
                 
                 <button 
@@ -79,17 +79,17 @@ const MyLeaves = () => {
                                 </div>
                             </div>
                             
-                            <p className="text-slate-300 text-sm font-medium leading-relaxed mb-8 h-12 overflow-hidden line-clamp-2 italic group-hover:text-white transition-colors">
+                            <p className="text-main/80 text-sm font-medium leading-relaxed mb-8 h-12 overflow-hidden line-clamp-2 italic group-hover:text-primary-400 transition-colors">
                                 "{leave.reason}"
                             </p>
 
                             <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-950/40 border border-white/5">
                                 <div className="flex flex-col">
-                                    <span className="text-[10px] text-slate-600 font-black uppercase tracking-[0.2em] mb-1">Duration</span>
+                                    <span className="text-[10px] text-muted font-black uppercase tracking-[0.2em] mb-1">Duration</span>
                                     <div className="flex items-center gap-2 text-primary-400 font-bold text-xs">
                                         <Calendar size={12} />
                                         <span>{new Date(leave.startDate).toLocaleDateString()}</span>
-                                        <span className="text-slate-700 mx-1">→</span>
+                                        <span className="text-muted/40 mx-1">→</span>
                                         <span>{new Date(leave.endDate).toLocaleDateString()}</span>
                                     </div>
                                 </div>

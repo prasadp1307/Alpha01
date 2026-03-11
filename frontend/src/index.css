@@ -13,31 +13,65 @@
   --color-primary-900: #4c1d95;
   --color-primary-950: #2e1065;
 
-  --color-slate-950: #020617;
-
   --font-sans: "Inter", "system-ui", "sans-serif";
-
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-glass-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 @layer base {
+  :root {
+    --bg-main: #020617; /* slate-950 */
+    --text-main: #e2e8f0; /* slate-200 */
+    --bg-card: rgba(15, 23, 42, 0.4); /* slate-900/40 */
+    --border-main: rgba(255, 255, 255, 0.1);
+    --bg-input: rgba(15, 23, 42, 0.5);
+    --text-muted: #64748b; /* slate-500 */
+    --glow-opacity: 0.1;
+  }
+
+  :root.light {
+    --bg-main: #f1f5f9; /* slate-100 */
+    --text-main: #0f172a; /* slate-900 */
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --border-main: rgba(0, 0, 0, 0.1);
+    --bg-input: #ffffff;
+    --text-muted: #475569; /* slate-600 */
+    --glow-opacity: 0.08;
+  }
+
   body {
-    @apply bg-slate-950 text-slate-200 antialiased;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    @apply antialiased;
     background-image: 
-      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.1) 0, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(76, 29, 149, 0.05) 0, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, var(--glow-opacity)) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(76, 29, 149, var(--glow-opacity)) 0, transparent 50%);
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300;
+    background-color: var(--bg-card);
+    @apply backdrop-blur-xl transition-all duration-300;
+    border: 1px solid var(--border-main);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Specific fix for light mode text in cards if needed, but using --text-main is better */
+  .dark .glass-card {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
   
   .glass-input {
-    @apply bg-slate-900/50 border border-slate-800 focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20 rounded-xl px-4 py-3 text-white outline-none transition-all;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    @apply rounded-xl px-4 py-3 outline-none transition-all;
+    border: 1px solid var(--border-main);
+  }
+  
+  .glass-input:focus {
+    @apply ring-2 ring-primary-500/20;
+    border-color: rgba(139, 92, 246, 0.5);
   }
 
   .btn-primary {
@@ -54,10 +88,10 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-slate-950;
+  background-color: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+  @apply bg-slate-400/20 rounded-full hover:bg-slate-400/40 transition-colors;
 }
 
 .animate-fade-in {

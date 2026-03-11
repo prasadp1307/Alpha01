@@ -53,8 +53,8 @@ const EmployeeDashboard = () => {
         <div className="animate-fade-in">
             <header className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h2 className="text-3xl font-black text-white tracking-tight">Active <span className="text-primary-500">Workspace</span></h2>
-                    <p className="text-slate-500 mt-1">Ready to start your session? Track your milestones here.</p>
+                    <h2 className="text-3xl font-black text-main tracking-tight">Active <span className="text-primary-500">Workspace</span></h2>
+                    <p className="text-muted mt-1">Ready to start your session? Track your milestones here.</p>
                 </div>
                 
                 <button 
@@ -79,31 +79,31 @@ const EmployeeDashboard = () => {
                             </div>
                             <Activity className="text-slate-800 group-hover:text-primary-500 transition-colors" size={20} />
                         </div>
-                        <h4 className="text-4xl font-black text-white mb-1 tracking-tight">{card.value}</h4>
-                        <p className="text-xs font-bold text-slate-500 uppercase tracking-[0.2em]">{card.label}</p>
+                        <h4 className="text-4xl font-black text-main mb-1 tracking-tight">{card.value}</h4>
+                        <p className="text-xs font-bold text-muted uppercase tracking-[0.2em]">{card.label}</p>
                     </div>
                 ))}
             </div>
 
             <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="glass-card p-8">
-                    <h3 className="text-xl font-bold text-white mb-6">Daily Affirmation</h3>
+                    <h3 className="text-xl font-bold text-main mb-6">Daily Affirmation</h3>
                     <div className="p-6 rounded-2xl bg-primary-600/5 border border-primary-500/10 italic">
-                        <p className="text-slate-300 leading-relaxed font-medium">"Innovation distinguishes between a leader and a follower. Your contributions today shape our collective future."</p>
+                        <p className="text-muted leading-relaxed font-medium">"Innovation distinguishes between a leader and a follower. Your contributions today shape our collective future."</p>
                         <p className="text-primary-500 font-bold mt-4 text-sm">— Team Alpha Leadership</p>
                     </div>
                 </div>
                 
                 <div className="glass-card p-8 bg-gradient-to-br from-indigo-600/10 to-transparent">
-                    <h3 className="text-xl font-bold text-white mb-6">Upcoming Deadlines</h3>
+                    <h3 className="text-xl font-bold text-main mb-6">Upcoming Deadlines</h3>
                     <div className="space-y-4">
                         {[1, 2].map(i => (
                             <div key={i} className="flex items-center justify-between p-4 rounded-xl border border-white/5 bg-slate-900/40 group hover:border-primary-500/30 transition-all cursor-default">
                                 <div className="flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-amber-500" />
-                                    <span className="text-sm font-bold text-slate-200">Sprint Review Submissions</span>
+                                    <span className="text-sm font-bold text-main">Sprint Review Submissions</span>
                                 </div>
-                                <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">In 2 Days</span>
+                                <span className="text-[10px] font-black text-muted uppercase tracking-widest">In 2 Days</span>
                             </div>
                         ))}
                     </div>

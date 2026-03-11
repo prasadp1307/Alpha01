@@ -48,8 +48,8 @@ const EmployeeManagement = () => {
         <div className="animate-fade-in">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                 <div>
-                    <h2 className="text-3xl font-black text-white tracking-tight">Employee <span className="text-primary-500">Directory</span></h2>
-                    <p className="text-slate-500 mt-1">Manage and monitor your team member profiles.</p>
+                    <h2 className="text-3xl font-black text-main tracking-tight">Employee <span className="text-primary-500">Directory</span></h2>
+                    <p className="text-muted mt-1">Manage and monitor your team member profiles.</p>
                 </div>
                 <button 
                     onClick={() => setShowModal(true)}
@@ -67,7 +67,7 @@ const EmployeeManagement = () => {
                         <input 
                             type="text" 
                             placeholder="Search by name, email or department..." 
-                            className="w-full bg-slate-950/50 border border-white/5 rounded-xl pl-12 pr-4 py-2 text-sm text-slate-300 focus:border-primary-500/50 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-slate-600"
+                            className="w-full bg-slate-950/50 border border-white/5 rounded-xl pl-12 pr-4 py-2 text-sm text-main focus:border-primary-500/50 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-muted"
                         />
                     </div>
                     <div className="flex items-center gap-2">
@@ -83,7 +83,7 @@ const EmployeeManagement = () => {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="text-slate-500 text-[11px] uppercase tracking-[0.2em] font-black border-b border-white/5 bg-white/[0.01]">
+                            <tr className="text-muted text-[11px] uppercase tracking-[0.2em] font-black border-b border-white/5 bg-white/[0.01]">
                                 <th className="px-8 py-5">Full Name</th>
                                 <th className="px-8 py-5">Corporate Email</th>
                                 <th className="px-8 py-5">Department</th>
@@ -99,16 +99,16 @@ const EmployeeManagement = () => {
                                             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 flex items-center justify-center font-bold text-xs text-primary-400">
                                                 {emp.name.split(' ').map(n=>n[0]).join('')}
                                             </div>
-                                            <span className="font-bold text-white group-hover:text-primary-400 transition-colors uppercase tracking-tight">{emp.name}</span>
+                                            <span className="font-bold text-main group-hover:text-primary-400 transition-colors uppercase tracking-tight">{emp.name}</span>
                                         </div>
                                     </td>
-                                    <td className="px-8 py-5 font-medium text-slate-400">{emp.email}</td>
+                                    <td className="px-8 py-5 font-medium text-muted">{emp.email}</td>
                                     <td className="px-8 py-5">
                                         <span className="bg-slate-800/50 border border-white/5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-400">
                                             {emp.department || 'N/A'}
                                         </span>
                                     </td>
-                                    <td className="px-8 py-5 text-slate-500 font-medium">{emp.designation || 'Active Member'}</td>
+                                    <td className="px-8 py-5 text-muted font-medium">{emp.designation || 'Active Member'}</td>
                                     <td className="px-8 py-5 text-right">
                                         <button 
                                             onClick={() => handleDelete(emp._id)} 

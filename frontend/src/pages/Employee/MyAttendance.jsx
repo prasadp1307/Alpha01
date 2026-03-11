@@ -41,8 +41,8 @@ const MyAttendance = () => {
         <div className="animate-fade-in">
             <header className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h2 className="text-3xl font-black text-white tracking-tight">Time <span className="text-primary-500">Tracker</span></h2>
-                    <p className="text-slate-500 mt-1">Monitor your daily activity and shift sessions.</p>
+                    <h2 className="text-3xl font-black text-main tracking-tight">Time <span className="text-primary-500">Tracker</span></h2>
+                    <p className="text-muted mt-1">Monitor your daily activity and shift sessions.</p>
                 </div>
                 
                 <button 
@@ -62,14 +62,14 @@ const MyAttendance = () => {
                 <div className="p-6 border-b border-white/5 bg-white/[0.02]">
                     <div className="flex items-center gap-3 text-slate-300">
                         <Clock size={20} className="text-primary-500" />
-                        <span className="font-bold text-sm uppercase tracking-widest">Recent Sessions</span>
+                         <span className="font-bold text-sm uppercase tracking-widest text-main">Recent Sessions</span>
                     </div>
                 </div>
 
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="text-slate-500 text-[11px] uppercase tracking-[0.2em] font-black border-b border-white/5 bg-white/[0.01]">
+                             <tr className="text-muted text-[11px] uppercase tracking-[0.2em] font-black border-b border-white/5 bg-white/[0.01]">
                                 <th className="px-8 py-5">Shift Date</th>
                                 <th className="px-8 py-5">Clock In</th>
                                 <th className="px-8 py-5">Clock Out</th>
@@ -83,7 +83,7 @@ const MyAttendance = () => {
                                     <td className="px-8 py-5">
                                         <div className="flex items-center gap-3">
                                             <Calendar size={16} className="text-slate-600 group-hover:text-primary-500 transition-colors" />
-                                            <span className="font-bold text-white tracking-tight">{new Date(log.date).toLocaleDateString()}</span>
+                                             <span className="font-bold text-main tracking-tight">{new Date(log.date).toLocaleDateString()}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5">

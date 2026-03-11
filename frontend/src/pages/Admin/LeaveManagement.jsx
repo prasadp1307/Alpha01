@@ -42,12 +42,12 @@ const LeaveManagement = () => {
         <div className="animate-fade-in">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
                 <div>
-                    <h2 className="text-3xl font-black text-white tracking-tight">Leave <span className="text-primary-500">Requests</span></h2>
-                    <p className="text-slate-500 mt-1">Review and manage employee absence applications.</p>
+                    <h2 className="text-3xl font-black text-main tracking-tight">Leave <span className="text-primary-500">Requests</span></h2>
+                    <p className="text-muted mt-1">Review and manage employee absence applications.</p>
                 </div>
                 <div className="flex items-center gap-2 bg-slate-900/50 p-1.5 rounded-2xl border border-white/5">
                     <button className="px-4 py-2 rounded-xl bg-primary-600 text-white text-xs font-bold uppercase tracking-widest shadow-lg shadow-primary-900/20">All Requests</button>
-                    <button className="px-4 py-2 rounded-xl text-slate-500 hover:text-slate-300 text-xs font-bold uppercase tracking-widest transition-colors">Pending</button>
+                    <button className="px-4 py-2 rounded-xl text-muted hover:text-main text-xs font-bold uppercase tracking-widest transition-colors">Pending</button>
                 </div>
             </div>
 
@@ -61,8 +61,8 @@ const LeaveManagement = () => {
                                         {leave.employeeId?.name?.[0]}
                                     </div>
                                     <div>
-                                        <h3 className="font-black text-white group-hover:text-primary-400 transition-colors uppercase tracking-tight">{leave.employeeId?.name}</h3>
-                                        <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">{leave.type} Leave</p>
+                                        <h3 className="font-black text-main group-hover:text-primary-400 transition-colors uppercase tracking-tight">{leave.employeeId?.name}</h3>
+                                        <p className="text-xs text-muted font-bold uppercase tracking-widest mt-1">{leave.type} Leave</p>
                                     </div>
                                 </div>
                                 <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.1em] border ${getStatusStyle(leave.status)}`}>
@@ -71,7 +71,7 @@ const LeaveManagement = () => {
                             </div>
 
                             <div className="bg-slate-950/40 border border-white/5 rounded-[1.5rem] p-6 mb-6">
-                                <p className="text-slate-300 text-sm leading-relaxed mb-6 font-medium italic">"{leave.reason}"</p>
+                                <p className="text-main/80 text-sm leading-relaxed mb-6 font-medium italic">"{leave.reason}"</p>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary-500">
@@ -79,7 +79,7 @@ const LeaveManagement = () => {
                                         </div>
                                         <div className="flex flex-col">
                                             <span className="text-[10px] text-slate-600 font-black uppercase tracking-widest">From</span>
-                                            <span className="text-xs font-bold text-slate-300">{new Date(leave.startDate).toLocaleDateString()}</span>
+                                            <span className="text-xs font-bold text-main">{new Date(leave.startDate).toLocaleDateString()}</span>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ const LeaveManagement = () => {
                                         </div>
                                         <div className="flex flex-col">
                                             <span className="text-[10px] text-slate-600 font-black uppercase tracking-widest">To</span>
-                                            <span className="text-xs font-bold text-slate-300">{new Date(leave.endDate).toLocaleDateString()}</span>
+                                            <span className="text-xs font-bold text-main">{new Date(leave.endDate).toLocaleDateString()}</span>
                                         </div>
                                     </div>
                                 </div>

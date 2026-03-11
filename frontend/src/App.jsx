@@ -21,7 +21,7 @@ import MyLeaves from './pages/Employee/MyLeaves';
 import MyAttendance from './pages/Employee/MyAttendance';
 
 const Layout = ({ children }) => (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-main transition-colors duration-300">
         <Navbar />
         <div className="flex">
             <Sidebar />
