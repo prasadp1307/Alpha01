@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, CheckSquare, Calendar, Clock, ChevronRight } from 'lucide-react';
+import { LayoutDashboard, Users, CheckSquare, Calendar, Clock, ChevronRight, BookOpen } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Sidebar = () => {
@@ -18,7 +18,9 @@ const Sidebar = () => {
             { name: 'My Tasks', path: '/tasks/my', icon: <CheckSquare size={20} /> },
             { name: 'Apply Leave', path: '/leaves/my', icon: <Calendar size={20} /> },
             { name: 'My Attendance', path: '/attendance/my', icon: <Clock size={20} /> },
-        ])
+        ]),
+        { name: 'Holidays', path: '/holidays', icon: <Calendar size={20} /> },
+        { name: 'Learning Center', path: '/learning', icon: <BookOpen size={20} /> },
     ];
 
     return (

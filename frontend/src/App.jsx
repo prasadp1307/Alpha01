@@ -20,6 +20,10 @@ import MyTasks from './pages/Employee/MyTasks';
 import MyLeaves from './pages/Employee/MyLeaves';
 import MyAttendance from './pages/Employee/MyAttendance';
 
+// Shared Pages
+import HolidayCalendar from './pages/Shared/HolidayCalendar';
+import LearningCenter from './pages/Shared/LearningCenter';
+
 const Layout = ({ children }) => (
     <div className="min-h-screen bg-main transition-colors duration-300">
         <Navbar />
@@ -84,6 +88,18 @@ function App() {
             <Route path="/attendance/my" element={
                 <ProtectedRoute role="Employee">
                     <Layout><MyAttendance /></Layout>
+                </ProtectedRoute>
+            } />
+
+            {/* Shared Routes */}
+            <Route path="/holidays" element={
+                <ProtectedRoute>
+                    <Layout><HolidayCalendar /></Layout>
+                </ProtectedRoute>
+            } />
+            <Route path="/learning" element={
+                <ProtectedRoute>
+                    <Layout><LearningCenter /></Layout>
                 </ProtectedRoute>
             } />
 
