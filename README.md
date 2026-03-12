@@ -73,5 +73,93 @@ Alpha One follows the **Glass-morphism** design trend, utilizing:
 - Sophisticated `slate-950` backgrounds with primary `violet` radial accents.
 - High-contrast, bold typography for clarity and impact.
 
+## ⛩️ System Design
+
+Detailed technical architecture and data flow diagrams.
+
+### 🏗️ High-Level Architecture
+Alpha One follows a modern MERN stack architecture.
+
+```mermaid
+graph TD
+    User((User))
+    
+    subgraph "Frontend (React + Vite)"
+        UI[UI Components / Lucide Icons]
+        Context[Context API - Auth/Theme]
+        Router[React Router]
+        Axios[Axios Service Layer]
+    end
+    
+    subgraph "Backend (Node.js + Express)"
+        API[Express Routes]
+        Middleware[Auth Middleware - JWT]
+        Controllers[Business Logic Controllers]
+        Mongoose[Mongoose ODM]
+    end
+    
+    subgraph "Storage"
+        DB[(MongoDB)]
+        Local[Local Storage - Theme/JWT]
+    end
+
+    User --> UI
+    UI --> Context
+    Context --> Router
+    Router --> UI
+    UI --> Axios
+    Axios --> API
+    API --> Middleware
+    Middleware --> Controllers
+    Controllers --> Mongoose
+    Mongoose --> DB
+    UI --> Local
+```
+
+### ⚙️ Backend Architecture (MVC)
+The backend follows a strict Model-View-Controller (MVC) pattern.
+
+```mermaid
+sequenceDiagram
+    participant C as Client (Axios)
+    participant R as Express Router
+    participant M as Auth Middleware
+    participant Ctrl as Controller
+    participant Model as Mongoose Model
+    participant DB as MongoDB
+
+    C->>R: API Request (with JWT)
+    R->>M: Validate Token
+    M->>Ctrl: Authorized Access
+    Ctrl->>Model: Query Data
+    Model->>DB: Fetch/Store
+    DB-->>Model: Results
+    Model-->>Ctrl: Document/Array
+    Ctrl-->>C: JSON Response
+```
+
+### 📊 Data Model (ERD)
+```mermaid
+erDiagram
+    USER ||--o{ TASK : "assigned to"
+    USER ||--o{ LEAVE : "applies for"
+    USER ||--o{ ATTENDANCE : "marks"
+    
+    USER {
+        string role "Admin | Employee"
+        string department
+    }
+    
+    TASK {
+        string status "Pending | In Progress | Completed"
+        string priority "Low | Medium | High"
+    }
+    
+    LEAVE {
+        string type "Personal | Sick | Vacation"
+        string status "Pending | Approved | Rejected"
+    }
+```
+
 ---
 Built with ❤️ by Alpha One Team (Prasad Patharvat).
